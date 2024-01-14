@@ -1,0 +1,22 @@
+@use './base/reset';
+@use './base/saichung';
+
+// header
+@use './layout/header';
+
+@use './layout/sanpham';
+@use './layout/home';
+
+
+@use './layout/footer';
+
+// page
+// user
+@use './page/sign';
+@use './page/information';
+// sản phẩm
+@use './page/cacloaisp';
+@use './page/productct';
+// giỏ hàng
+@use './page/cart';
+@use './page/cartchitiet';

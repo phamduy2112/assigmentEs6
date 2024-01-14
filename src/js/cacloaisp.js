@@ -1,0 +1,1 @@
+// import { hienSpTheoLoai } from "./index";

@@ -1,0 +1,101 @@
+@use '../components/value' as *;
+.cacloaisp{
+    .cacloaisp--box{
+        display: flex;
+        gap: 10px;
+        height: auto;
+    }
+    width: 100%;
+    &-left{
+        background-color: white;
+       border: 1px solid black;
+  
+       width: 255px; 
+      
+    }
+    &-right{
+       border: 1px solid black;
+    
+        width: 100%;
+        &__top{
+
+            background-color: white;
+            height: 3rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+            .phanloai select {
+               padding: .2rem 0;
+            }
+        }
+    }
+    &-item{
+       border-bottom: 1px solid black;
+
+    
+      .cacloaisp-item__top{
+        display: flex; padding: 1rem 2rem;
+        font-size: 2rem;
+        justify-content: space-between;
+       flex-wrap: wrap;
+    }   
+
+    .cacloaisp-item_bottom{
+        display: flex; 
+        padding: 0 2rem;
+        gap: 1rem;
+        
+       flex-wrap: wrap;
+    
+    }
+
+
+    ul.menu-item{
+      display: none;
+    }
+     ul li{
+            border-bottom: 1px solid black;
+            font-size: 1.7rem;
+            a{
+                padding: 0 2rem;
+                color: black;
+            }
+        }
+        .item__box{
+            font-size: 1.2rem;
+          text-align: center;
+        
+            
+        }
+        .cacloaisp-form{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 3rem;
+            .form-group{
+                font-size: 1.8rem;
+            }
+        }
+
+    }
+      .numbers{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        span{
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            &.active{
+                background-color: $color-chudao;
+                color: white;
+            }
+        }
+       }
+}

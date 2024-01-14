@@ -1,0 +1,86 @@
+@use '../components/value' as *;
+.information{
+    max-width: 80%;
+  
+    margin:5rem auto;
+    background-color: white;
+    padding: 4rem;
+    .information-box{
+        display: flex;
+       
+        gap: 20px;
+        &__left{
+            width: 25%;
+            border: 1px solid $color-border-form;
+            box-shadow: 0 0 4px rgba(white,.5);
+            
+            
+        }
+        .information-box__top{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid $color-border-form;
+            padding:1rem 2rem;
+         .information_item h3{
+            font-weight: bold;
+         }   
+        }
+        .information-box__top img{
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+        }
+        .information-box__bottom{
+          
+            ul li{
+                padding: .5rem 2rem;
+                border-bottom: 1px solid $color-border-form;
+                a{
+                    color: black;
+                }    
+            }
+          
+            
+        }
+        &__right{
+            border: 1px solid $color-border-form;
+            box-shadow: 0 0 4px rgba(white,.5);
+            width: 75%;
+            padding: 1rem 10rem;
+
+            .information-title{
+                text-align: center;
+                h3{
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+            .information-item{
+                margin-top: 1rem;
+                h3{
+                   font-size: 1.8rem;
+                font-weight: bold;   
+                }
+                p{
+                    display: flex;
+                    justify-content: end;
+                    color: $color-chudao;
+                    cursor: pointer;
+                }
+                .form-button{
+                    display: flex;
+                    justify-content: end;
+                    gap: 10px;
+                    p{
+                        border: 1px solid $color-border-form;
+                        border-radius: 5px;
+                        padding: .5rem 1rem;
+                        
+                    }
+                }
+              
+            }
+        }
+    }
+}

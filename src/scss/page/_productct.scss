@@ -1,0 +1,131 @@
+@use '../components/value' as *;
+// san pham chi tiet
+.product-chitiet{
+    background-color: white;
+    margin: 0 auto;
+    &__top{
+        display: flex;
+        gap: 20px;
+    }
+    &__left{
+        width:55%;
+        height: 100%;
+        .big_img{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+        .small_img{
+            max-width: 100%;
+            overflow: hidden;
+            .small_image{
+            display: flex;
+            gap: 15px;
+             
+         
+            img{
+                border: 1px solid black;
+               width: 100%;
+               cursor: pointer;
+            //    transform: translateX(-90px);
+            }
+        } 
+        }
+    
+    }
+    &__right{
+        
+    
+        width: 45%;
+       
+        padding: 1rem 0;
+        .product-chitiet__padding{
+            padding: 0 1.2rem;
+        }
+        h3{
+            font-size:20px;
+     
+            font-weight: bold;
+        }
+        .price{
+            span{
+                font-size: 1.3rem;
+                text-decoration: line-through;
+                color: grey;
+            }
+            color: $color-chudao;
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        .loai{
+            
+            span{
+                color: $color-chudao;
+                font-weight: bold;
+                font-size: 1.8rem;
+            }
+            .product-chitiet-icons{
+   
+                color: black;
+             
+                
+            }
+        }
+        .product-chitiet__box{
+            display: flex;
+            width: 100%;
+            gap: 10px ;
+            margin: 1.5rem 0;
+            .soluong{
+          
+                display: flex;
+                border: 1px solid $color-border-form;
+                width: 15%;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 1rem;
+                padding: .4rem .8rem;
+            }
+          
+        }
+       
+        button.btn{
+                width: 100%;
+                
+                cursor: pointer;
+            }
+        .themgiohang{
+            background-color: $color-chudao;
+            color: white;
+
+            border: 1px solid $color-chudao;
+            border-radius: 1rem;
+        }
+        .muangay{
+            height: 3rem;
+            margin-bottom: 1rem;
+            background-color: white;
+            color: $color-chudao;
+            border: 1px solid $color-chudao;
+            border-radius: 1rem;
+        }
+        .product-chitiet-final{
+            display: flex;
+            justify-content:space-between ;
+        }
+    }
+    &__bottom{
+        margin-top: 1rem;
+        .product-chitiet__cha{
+            border: 1px solid black;
+            height: 2rem;
+        }
+        .product-chitiet__con{
+            border: 1px solid black;
+            height: 5rem;
+            margin-top: 1rem;
+        }
+    }
+}

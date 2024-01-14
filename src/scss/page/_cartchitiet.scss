@@ -1,0 +1,90 @@
+@use '../components/value'as *;
+
+.cart-chitiet{
+    margin-top: 5rem;
+ 
+
+
+    &__title{
+        font-size: 2rem;
+        padding: 0 5rem;
+        margin: 1rem 0;
+    }
+    &__box{
+        display: flex;
+        gap: 1rem;
+        
+    }
+    &__thanhtoan{
+        display: flex;
+        padding: 0 5rem;
+        margin: 1.1rem 0;
+    }
+    &__left{
+        width: 60%;
+        border: 1px solid $color-border-form; 
+        border-radius: 2rem;
+       background-color: white;
+        height: 30rem;
+        padding: 1rem 0;
+       .sign-form{
+        padding: 0 5rem;
+       }
+       .buttons{
+        padding: 0 5rem;
+        display: flex;
+        
+        justify-content: space-between;
+        .quaylai{
+            padding: .7rem 2rem;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+        .xacnhan{
+            padding: .7rem 2rem;
+            background-color: $color-chudao;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+       }
+    }
+    &__right{
+        background-color: white;
+        width: 30%;
+        border: 1px solid $color-border-form; 
+        border-radius: 2rem;
+        h3{
+            padding: .5rem 2rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .cart-chitiet__product{
+            display: flex;
+            border-bottom: 1px solid black;
+            padding: 1rem 0;
+            .cart-chitiet__box{
+                padding: 0 2rem;
+            }
+            img{
+                
+                
+                width: 65px;
+            }
+        }
+    }
+    &__tong{
+        padding: 0 5rem;
+        margin: 1rem 0;
+        div{
+            display: flex;
+            justify-content: space-between;
+            span{
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+        }
+    }
+    
+}

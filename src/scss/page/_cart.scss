@@ -1,0 +1,190 @@
+@use '../components/value'as *;
+
+.cart {
+    .cart-title {
+        margin-bottom: 1.2rem;
+
+        h3 {
+            font-size: 4rem;
+            color: $color-chudao;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.6rem;
+            color: grey;
+
+        }
+    }
+
+    .cart-box {
+        display: flex;
+        gap: 3rem;
+
+        .cart-left {
+            background-color: white;
+            width: 70%;
+
+
+            table {
+
+                width: 100%;
+                border: 1px solid black;
+
+                thead {
+
+                    font-size: 2rem;
+                    background-color: $color-chudao;
+                    color: white;
+
+                }
+
+                tbody {
+
+
+                    width: 100%;
+
+                    tr {
+                        border-bottom: 1px solid black;
+                    }
+
+                    tr>.product___cart {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .product__cart {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        width: 250px;
+
+                      
+
+
+                    }
+                 
+                    .iconss,
+                    .thanhtien,
+                    .product_gia,
+                    .soluong {
+                        text-align: center;
+                        position: relative;
+                        bottom: 1.8rem;
+
+                    }
+
+                    .thanhtien {
+                        font-weight: bold;
+                        color: $color-chudao;
+                    }
+
+                    .soluong {
+                        .d-flex {
+                            justify-content: center;
+                            align-items: center;
+
+                            .plus,
+                            .minus {
+                                font-size: 1rem;
+
+                                cursor: pointer;
+
+                            }
+
+                            .numbers {
+                                font-size: 1.7rem;
+                                margin: 0 .3rem;
+                            }
+                        }
+                    }
+
+                }
+
+                .product__cart {
+                    img {
+                        width: 50px;
+                    }
+
+                }
+            }
+        }
+
+        .cart-right {
+            width: 30%;
+            border: 1px solid white;
+            border-top-left-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+            height: 28.5rem;
+            background-color: white;
+            padding: 1rem 0;
+            box-shadow: 2px 0 10px rgba(white, .5);
+
+            .btn-cart {
+                padding: 0 5rem;
+                width: 100%;
+                height: 3.5rem;
+                margin-top: 1rem;
+                background-color: $color-chudao;
+                color: white;
+                border-radius: .5rem;
+                border: none;
+                cursor: pointer;
+            }
+
+            &__box {
+                // 
+            }
+
+            .cart-right__item {
+                padding: 0 5rem;
+
+                p {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+
+                    span {
+                        font-weight: 500;
+                    }
+                }
+
+                .form-group {
+                    border: 1px solid $color-border-form;
+                    border-radius: .5rem;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: space-between;
+                    height: 3rem;
+                    margin-bottom: 1.2rem;
+
+                    input {
+                        width: 60%;
+                        border: none;
+                        outline: none;
+                        padding: 0 2rem;
+                    }
+
+                    .deal {
+                        background-color: $color-chudao;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            h3 {
+                text-align: center;
+                font-size: 2.5rem;
+                color: $color-chudao;
+                font-weight: bold;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
