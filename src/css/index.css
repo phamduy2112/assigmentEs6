@@ -152,8 +152,14 @@ body {
   border-radius: 50%;
 }
 
-.red {
+.đỏ {
   background-color: red;
+}
+.xám {
+  background-color: grey;
+}
+.xanh {
+  background-color: greenyellow;
 }
 
 .d-flex {
@@ -164,7 +170,9 @@ body {
 .minus {
   cursor: pointer;
 }
-
+#header{
+  margin-bottom: 2rem;
+}
 header .desktop .header-first {
   background-color: black;
 }
@@ -198,6 +206,24 @@ header .desktop .header-second .header-group .group-form {
   border: 1px solid black;
   background-color: white;
   height: 2.7rem;
+}
+.header-second #cart{
+  position: relative;
+}
+.header-second #numberCart{
+  position: absolute;
+  top: -.5rem ;
+  right: .3rem;
+  
+  background-color: black;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  
+  
 }
 header .desktop .header-second .header-group .group-form input {
   padding: 0 20px;
@@ -355,6 +381,8 @@ header .header-cart.active {
 }
 .products .product__box .product__item p {
   padding: 0 0.7rem;
+  color: #00b4d8;
+  font-weight: bold;
 }
 
 .products__normal {
@@ -376,6 +404,8 @@ header .header-cart.active {
 }
 .products__normal .product__boxs .product__item p {
   padding: 0 0.7rem;
+  color: #00b4d8;
+  font-weight: bold;
 }
 
 .product__image {
@@ -400,12 +430,15 @@ header .header-cart.active {
   transform: translateY(0);
 }
 
-.product__image > div a {
+.product__image div.buttons a {
   color: black;
-  padding: 0 0.9rem;
+ 
+
   display: inline-block;
 }
-
+.product__image div.buttons a:last-child{
+  margin-right: 1.5rem;
+}
 img {
   width: 100%;
 }
@@ -662,12 +695,11 @@ img {
   height: auto;
 }
 .cacloaisp-left {
-  background-color: white;
-  border: 1px solid black;
+
   width: 255px;
 }
 .cacloaisp-right {
-  border: 1px solid black;
+
   width: 100%;
 }
 .cacloaisp-right__top {
@@ -679,11 +711,19 @@ img {
   justify-content: space-between;
   align-items: center;
 }
+.cacloaisp-right__top .bocuc,
+.cacloaisp-right__top .phanloai{
+  padding: 0 2rem;
+}
 .cacloaisp-right__top .phanloai select {
   padding: 0.2rem 0;
 }
 .cacloaisp-item {
   border-bottom: 1px solid black;
+    background-color: white;
+    border: 1px solid black;
+    margin-bottom: 10px;
+
 }
 .cacloaisp-item .cacloaisp-item__top {
   display: flex;
@@ -691,12 +731,14 @@ img {
   font-size: 2rem;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-bottom: 1px solid black;
 }
 .cacloaisp-item .cacloaisp-item_bottom {
   display: flex;
   padding: 0 2rem;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 .cacloaisp-item ul.menu-item {
   display: none;
@@ -704,10 +746,24 @@ img {
 .cacloaisp-item ul li {
   border-bottom: 1px solid black;
   font-size: 1.7rem;
+  padding: .2rem 0;
+  transition: all .5s;
+}
+.cacloaisp-item ul li:hover{
+  background-color: #00b4d8;
+ 
+}
+.cacloaisp-item ul li:hover a{
+  color: white;
+} 
+.cacloaisp-item ul li:last-child{
+  border-bottom: none;
 }
 .cacloaisp-item ul li a {
   padding: 0 2rem;
   color: black;
+  transition: all .5s;
+  
 }
 .cacloaisp-item .item__box {
   font-size: 1.2rem;
@@ -727,6 +783,7 @@ img {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin: 1rem;
 }
 .cacloaisp .numbers span {
   width: 20px;
@@ -742,12 +799,13 @@ img {
 }
 
 .product-chitiet {
-  background-color: white;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 .product-chitiet__top {
   display: flex;
   gap: 20px;
+  background-color: white;
+  padding: 1rem;
 }
 .product-chitiet__left {
   width: 55%;
@@ -765,11 +823,11 @@ img {
 }
 .product-chitiet__left .small_img .small_image {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 .product-chitiet__left .small_img .small_image img {
   border: 1px solid black;
-  width: 100%;
+  width: 21%;
   cursor: pointer;
 }
 .product-chitiet__right {
@@ -843,13 +901,28 @@ img {
   margin-top: 1rem;
 }
 .product-chitiet__bottom .product-chitiet__cha {
-  border: 1px solid black;
-  height: 2rem;
+  background-color: white;
+}
+.product-chitiet__bottom .product-chitiet__cha .product-chitiet-cha__item {
+  margin-left: 0.4rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+.product-chitiet__bottom .product-chitiet__cha .product-chitiet-cha__item.active {
+  background: #00b4d8;
+  color: white;
 }
 .product-chitiet__bottom .product-chitiet__con {
-  border: 1px solid black;
-  height: 5rem;
+  background-color: white;
   margin-top: 1rem;
+}
+.product-chitiet__bottom .product-chitiet__con .product-chitiet-con__item {
+  font-size: 1.8rem;
+  padding: 0 1rem;
+}
+.product-chitiet__bottom .product-chitiet__con .product-chitiet-con__item li {
+  list-style: none;
 }
 
 .cart .cart-title {

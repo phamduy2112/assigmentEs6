@@ -306,9 +306,10 @@ rendersanPham = (sp, id = "") => {
   let { id: idsp, ten_sp, hinh, gia, ngay } = sp;
 
   return `<div class="product__item" id=${id}>
-    <div class="product__image">
+  <a href="productct.html?id=${idsp}">
+  <div class="product__image">
         <img src=${hinh} alt="">
-        <div>
+        <div class="buttons">
             <a href="">Xem Thêm</a>
             <a href="#" onclick="addSP(${idsp})">Thêm giỏ hàng</a>
         </div>
@@ -317,6 +318,9 @@ rendersanPham = (sp, id = "") => {
         <h3>${ten_sp}</h3>
         <p class="price">${gia}</p>
     </div>
+    
+    </a>
+    
 </div>`;
 };
 
@@ -363,11 +367,14 @@ const thayDoiSL = (id, num) => {
   localStorage.setItem("giohang", JSON.stringify(updatedCart));
   // Gọi hàm renderCart() để cập nhật giao diện
   document.querySelector("#cartList").innerHTML = renderCart(cart);
- 
+const listCart=document.querySelector("#listCart");
+ if(listCart){
  document.querySelector("#listCart").innerHTML = renderPageCart(cart);
+ document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
+
+}
 
   document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
-  document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
   document.querySelector("#numberCart").innerHTML = numGioHang(cart);
 
 };
@@ -408,7 +415,7 @@ const renderPageCart = (num=1,cart) => {
 
   </td>
   <td class="thanhtien">${item.gia*item.soLuong}</td>
-  <td><i class="fa fa-trash iconss" aria-hidden="true" onclick="iconXoa(${item.id})"></i></td>
+  <td><i class="fa fa-trash iconss" aria-hidden="true" onclick="xoaIcoin(${item.id})"></i></td>
 </tr>
 
 
@@ -495,7 +502,7 @@ const tongCartPage = (page=1,cart) => {
 
   <div class="cart-right__item">
     <p><span>Số lượng:</span>${tongSoLuong}</p>
-    <p><span>Thành tiền:</span>3</p>
+    <p><span>Thành tiền:</span>${tongSoTien}</p>
   </div>
 
   <hr />
@@ -507,12 +514,12 @@ const tongCartPage = (page=1,cart) => {
         </div>
         
     </form>
-    <p><span>Ma giam gia:</span></p>
-    <p><span>Tien Ship:</span>3</p>
+    <p><span>Ma giam gia:</span>0</p>
+    <p><span>Tien Ship:</span>0</p>
   </div>
   <hr>
   <div class="cart-right__item">
-    <p><span>Tổng:</span>20.000.000đ</p>
+    <p><span>Tổng:</span>${tongSoTien}</p>
   </div>
   <div class="cart-right__item">
     <button class="btn-cart">Mua ngay</button>
@@ -526,6 +533,22 @@ const numGioHang=()=>{
    cart = JSON.parse(localStorage.getItem("giohang"));
    renderNum=`${cart==undefined ? "0":cart.length}`;
   return renderNum;
+}
+const xoaIcoin=(id)=>{
+  let cart = JSON.parse(localStorage.getItem("giohang"));
+  let updateCart=cart.filter((sp)=>!(sp.id==id));
+  localStorage.setItem("giohang", JSON.stringify(updateCart));
+  document.querySelector("#cartList").innerHTML = renderCart(cart);
+  const listCart=document.querySelector("#listCart");
+   if(listCart){
+   document.querySelector("#listCart").innerHTML = renderPageCart(cart);
+   document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
+  
+  }
+  
+    document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
+    document.querySelector("#numberCart").innerHTML = numGioHang(cart);
+
 }
 // giỏ hàng
 const pageGiohang=()=>{
@@ -564,63 +587,10 @@ renderPage=
   
 document.querySelector("#pageCart").innerHTML=renderPage;
 }
-const iconXoa=(id)=>{
-  let cart = JSON.parse(localStorage.getItem("giohang"));
-  let updatedCart=cart.filter((item)=> !(item.id===id));
-  localStorage.setItem("giohang", JSON.stringify(updatedCart));
-  
-  document.querySelector("#cartList").innerHTML = renderCart(cart);
- 
- document.querySelector("#listCart").innerHTML = renderPageCart(cart);
-
-  document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
-  document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
-  document.querySelector("#numberCart").innerHTML = numGioHang(cart);
-
-}
 
 
 
-const hienSpTheoLoai = async (id) => {
-  const res = await fetch("http://localhost:3000/sanpham");
-  const dataSp = await res.json();
-  console.log(dataSp);
-  const datasp = dataSp.filter((item) => item.id_loai == id);
-  console.log(datasp);
-  let renderLoai = ``;
-  datasp.forEach((sp) => (renderLoai += rendersanPham(sp)));
-  console.log(datasp);
-  let loai = ``;
-  if (id == 1) loai = "Áo";
-  else if (id == 2) loai = "Quần";
-  else if (id == 3) loai = "Giày";
-  else loai = "Phụ kiện";
 
-  document.querySelector(".cacloaisp-right").innerHTML = `   
-  <div class="cacloaisp-right__top">
-  <div class="bocuc">
-  Danh Mục: ${loai}
-  </div>
-  <div class="phanloai">
-      <select name="" id="">
-          <option value="">Mới nhất</option>
-          <option value="">Cũ nhất</option>
-      </select>
-  </div>
-</div>
-<div class="cacloaisp-right__bottom">
-  <div class="products__normal">
-      <div class="product__boxs">
-        
-  ${renderLoai}
 
-      </div>
-  </div>
-  <div class="numbers">
-      <span class="active">1</span>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-  </div>
-</div>`;
-};
+// 
+

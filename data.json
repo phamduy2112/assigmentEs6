@@ -32,5 +32,10 @@
         {"id":"16","id_loai":"3","ten_sp":"Giày Nike Air Jordan 1 Low","gia":"320000","giam_gia":"0%","hinh":"https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"}
        
 
+    ],
+    "thuoc_tinh":[
+        {"id":"1","id_sp":"1","ma_sp":"SMD0097MMXD","hinhsp2":"https://product.hstatic.net/1000096703/product/2_b2183e90998e482e8b32c5567c95252f_master.jpg","hinhsp3":"https://product.hstatic.net/1000096703/product/3_4163ff8bc09845afa2bded7dcccd1cf9_master.jpg"},
+        {"id":"2","id_sp":"2","ma_sp":"zxmotqwe"}
+
     ]
 }
