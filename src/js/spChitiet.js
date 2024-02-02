@@ -16,8 +16,8 @@ const chiTietSP=async (id)=>{
                 <div class="small_image">
                 <img src=${sp.hinh} alt="">
                 <img src=${sp.hinhsp2} alt="">
-                <img src=${sp.hinhsp2} alt="">
-                <img src=${sp.hinhsp2} alt="">
+                <img src=${sp.hinhsp3} alt="">
+                <img src=${sp.hinhsp4} alt="">
                 <img src=${sp.hinhsp2} alt="">
                
                 </div>
@@ -38,7 +38,8 @@ const chiTietSP=async (id)=>{
             <div class="price">
             Giá:
                 
-                ${sp.gia}
+            ${Number(sp.gia).toLocaleString("vi")}
+
             </div>
             <hr>
             <p class="loai"><span>Loai:</span> Ao</p>

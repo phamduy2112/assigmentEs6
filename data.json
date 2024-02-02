@@ -1,41 +1,379 @@
 {
-    "loai": [
-        {"id":"1","ten_loai":"Áo"},
-        {"id":"2","ten_loai":"Quần"},
-        {"id":"3","ten_loai":"Giày"},
-        {"id":"4","ten_loai":"Phụ kiện"}
-        
-        ],
-    "users":[
-        {"id" : 1,"taikhoan":"duyp7484","email":"duyp7484@gmail.com","matkhau":"Ngocduy1"},
-        {"id" : 2,"taikhoan":"duyp7454","email":"duyp7454@gmail.com","matkhau":"Ngocduy1"}
-    ],
-    "sanpham":[
-        {"id":"1","id_loai":"1","ten_sp":"Sơ Mi Cotton Tay Dài SMD0097","gia":"320000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"2","id_loai":"2","ten_sp":"Quần Tây Phối Eo Thun QTA0045","gia":"380000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/0_e5ccb93a58e445999bd09168aa88d960_master.jpg","ngay":"2024-02-01","mau_sac":"xám","xem":"525","hot":"0"},
-        {"id":"3","id_loai":"1","ten_sp":"Áo Thun Polo Tay Dài ATD0013","gia":"400000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"4","id_loai":"3","ten_sp":"Giày Nike Air Jordan 1 Low","gia":"320000","giam_gia":"0%","hinh":"https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-       
-        {"id":"5","id_loai":"1","ten_sp":"Sơ Mi Cotton Tay Dài SMD0097","gia":"320000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"6","id_loai":"2","ten_sp":"Quần Tây Phối Eo Thun QTA0045","gia":"380000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/0_e5ccb93a58e445999bd09168aa88d960_master.jpg","ngay":"2024-02-01","mau_sac":"xám","xem":"525","hot":"0"},
-        {"id":"7","id_loai":"1","ten_sp":"Áo Thun Polo Tay Dài ATD0013","gia":"400000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"8","id_loai":"3","ten_sp":"Giày Nike Air Jordan 1 Low","gia":"320000","giam_gia":"0%","hinh":"https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-       
-        {"id":"9","id_loai":"1","ten_sp":"Sơ Mi Cotton Tay Dài SMD0097","gia":"320000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"10","id_loai":"2","ten_sp":"Quần Tây Phối Eo Thun QTA0045","gia":"380000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/0_e5ccb93a58e445999bd09168aa88d960_master.jpg","ngay":"2024-02-01","mau_sac":"xám","xem":"525","hot":"0"},
-        {"id":"11","id_loai":"1","ten_sp":"Áo Thun Polo Tay Dài ATD0013","gia":"400000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"12","id_loai":"3","ten_sp":"Giày Nike Air Jordan 1 Low","gia":"320000","giam_gia":"0%","hinh":"https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-       
-        {"id":"13","id_loai":"1","ten_sp":"Sơ Mi Cotton Tay Dài SMD0097","gia":"320000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"14","id_loai":"2","ten_sp":"Quần Tây Phối Eo Thun QTA0045","gia":"380000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/0_e5ccb93a58e445999bd09168aa88d960_master.jpg","ngay":"2024-02-01","mau_sac":"xám","xem":"525","hot":"0"},
-        {"id":"15","id_loai":"1","ten_sp":"Áo Thun Polo Tay Dài ATD0013","gia":"400000","giam_gia":"0%","hinh":"https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"},
-        {"id":"16","id_loai":"3","ten_sp":"Giày Nike Air Jordan 1 Low","gia":"320000","giam_gia":"0%","hinh":"https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg","ngay":"2024-02-01","mau_sac":"xanh lá","xem":"525","hot":"0"}
-       
-
-    ],
-    "thuoc_tinh":[
-        {"id":"1","id_sp":"1","ma_sp":"SMD0097MMXD","hinhsp2":"https://product.hstatic.net/1000096703/product/2_b2183e90998e482e8b32c5567c95252f_master.jpg","hinhsp3":"https://product.hstatic.net/1000096703/product/3_4163ff8bc09845afa2bded7dcccd1cf9_master.jpg"},
-        {"id":"2","id_sp":"2","ma_sp":"zxmotqwe"}
-
-    ]
+  "loai": [
+    {
+      "id": "1",
+      "ten_loai": "Áo"
+    },
+    {
+      "id": "2",
+      "ten_loai": "Quần"
+    },
+    {
+      "id": "3",
+      "ten_loai": "Giày"
+    },
+    {
+      "id": "4",
+      "ten_loai": "Phụ kiện"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "taikhoan": "duyp7484",
+      "email": "duyp7484@gmail.com",
+      "matkhau": "Ngocduy1",
+      "vaitro": 1
+    },
+    {
+      "id": "2",
+      "taikhoan": "duyp7454",
+      "email": "duyp7454@gmail.com",
+      "matkhau": "Ngocduy1",
+      "vaitro": 0
+    },
+    {
+      "id": "955f",
+      "fullName": "duy",
+      "email": "phamngocquang44@yahoo.com",
+      "password": "NGocduy1",
+      "vaitro": 0
+    }
+  ],
+  "sanpham": [
+    {
+      "id": "1",
+      "id_loai": "1",
+      "ten_sp": "Sơ Mi Nam Trắng SMD0089",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_d4c95fe0dc8a47e28b0b3d3083498997_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "2",
+      "id_loai": "2",
+      "ten_sp": "Quần Tây Phối Eo Thun QTA0045",
+      "gia": "380000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/0_e5ccb93a58e445999bd09168aa88d960_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xám",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "3",
+      "id_loai": "1",
+      "ten_sp": "Áo Thun Polo Tay Dài ATD0013",
+      "gia": "400000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "4",
+      "id_loai": "3",
+      "ten_sp": "Giày Nike Air Jordan 1 Low",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "5",
+      "id_loai": "1",
+      "ten_sp": "Sơ Mi Cotton Tay Dài SMD0097",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_899fe7d03bb249439906ce3336af7274_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "6",
+      "id_loai": "2",
+      "ten_sp": "Quần Tây Lưng Thun QTA0044",
+      "gia": "380000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_068c55318962447abeeb50f67a42d5f0_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xám",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "7",
+      "id_loai": "1",
+      "ten_sp": "Áo Khoác Dù Trắng AKD0041",
+      "gia": "400000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/0_7cebef26c1064010865e6360197183c2_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "8",
+      "id_loai": "2",
+      "ten_sp": "Quần Short Kaki Nam QSK0065",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_7a4b5f32dc2b4ec3a0e389c9020dcada_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "9",
+      "id_loai": "1",
+      "ten_sp": "Sơ Mi Cotton Tay Dài SMD0097",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "10",
+      "id_loai": "2",
+      "ten_sp": "Quần Tây Nam Slimfit QTA0036",
+      "gia": "380000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_97e42ec95db74e9fa48e57a068f88165_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xám",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "11",
+      "id_loai": "1",
+      "ten_sp": "Áo Thun Polo Tay Dài ATD0013",
+      "gia": "400000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "12",
+      "id_loai": "3",
+      "ten_sp": "Giày Nike Air Jordan 1 Low",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "13",
+      "id_loai": "1",
+      "ten_sp": "Áo Thun Raglan Form ATN0151",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_17658cd840ec4b3d88e1e516d6f2fdd8_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "14",
+      "id_loai": "2",
+      "ten_sp": "Quần Tây Phối Eo Thun QTA0045",
+      "gia": "380000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/0_e5ccb93a58e445999bd09168aa88d960_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xám",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "15",
+      "id_loai": "1",
+      "ten_sp": "Áo Thun Polo Tay Dài ATD0013",
+      "gia": "400000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "16",
+      "id_loai": "3",
+      "ten_sp": "Giày Nike Air Jordan 1 Low",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "17",
+      "id_loai": "1",
+      "ten_sp": "Sơ Mi Cotton Tay Dài SMD0097",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "18",
+      "id_loai": "2",
+      "ten_sp": "Quần Tây Phối Eo Thun QTA0045",
+      "gia": "380000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/0_e5ccb93a58e445999bd09168aa88d960_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xám",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "19",
+      "id_loai": "1",
+      "ten_sp": "Áo Thun Polo Tay Dài ATD0013",
+      "gia": "450000",
+      "giam_gia": "0%",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_4f7f5e5ab8c44b46a26c7f7dacdb9621_master.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "id": "20",
+      "id_loai": "3",
+      "ten_sp": "Giày Nike Air Jordan 1 Low",
+      "gia": "320000",
+      "giam_gia": "0%",
+      "hinh": "https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg",
+      "ngay": "2024-02-01",
+      "mau_sac": "xanh lá",
+      "xem": "525",
+      "hot": "0"
+    },
+    {
+      "ten_sp": "duy123123",
+      "gia": "2",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg",
+      "id_loai": "1",
+      "id": "c1a2"
+    }
+  ],
+  "thuoc_tinh": [
+    {
+      "id": "1",
+      "id_sp": "1",
+      "ma_sp": "SMD0097MMXD",
+      "hinhsp2": "https://product.hstatic.net/1000096703/product/4_a60477bf906b45e393e72e502a5331d1_master.jpg",
+      "hinhsp3": "https://product.hstatic.net/1000096703/product/5_2ed048dc43314e4ea36710ed46148f4e_master.jpg",
+      "hinhsp4": "https://product.hstatic.net/1000096703/product/7_8beee914b4d84b698d8273d058d7a550_master.jpg",
+      "hinhsp5": "https://product.hstatic.net/1000096703/product/img_3742_jpg_c338b7dce0c748938304fed5c1f4b285_master.jpg"
+    },
+    {
+      "id": "2",
+      "id_sp": "2",
+      "ma_sp": "QTA004529XA",
+      "hinhsp2": "https://product.hstatic.net/1000096703/product/3_6c0d06f2299e43e8ae9738644dfb0c58_master.jpg",
+      "hinhsp3": "https://product.hstatic.net/1000096703/product/4_f76ef4b2caff452aab1988c42372593f_master.jpg",
+      "hinhsp4": "https://product.hstatic.net/1000096703/product/6_423cd48ac0af448fbb80ac0a24d10327_master.jpg",
+      "hinhsp5": "https://product.hstatic.net/1000096703/product/2_089b6710c7104f98b805ec70438f6a17_master.jpg"
+    },
+    {
+      "id": "3",
+      "id_sp": "3",
+      "ma_sp": "SMD0089MMTA",
+      "hinhsp2": "",
+      "hinhsp3": "",
+      "hinhsp4": "",
+      "hinhsp5": ""
+    },
+    {
+      "id": "4",
+      "id_sp": "4",
+      "ma_sp": "SMD0089MMTA",
+      "hinhsp2": "",
+      "hinhsp3": "",
+      "hinhsp4": "",
+      "hinhsp5": ""
+    },
+    {
+      "id": "5",
+      "id_sp": "5",
+      "ma_sp": "SMD0089MMTA",
+      "hinhsp2": "",
+      "hinhsp3": "",
+      "hinhsp4": "",
+      "hinhsp5": ""
+    },
+    {
+      "id": "6",
+      "id_sp": "6",
+      "ma_sp": "SMD0089MMTA",
+      "hinhsp2": "",
+      "hinhsp3": "",
+      "hinhsp4": "",
+      "hinhsp5": ""
+    },
+    {
+      "id": "7",
+      "id_sp": "7",
+      "ma_sp": "SMD0089MMTA",
+      "hinhsp2": "",
+      "hinhsp3": "",
+      "hinhsp4": "",
+      "hinhsp5": ""
+    }
+  ],
+  "donHang": [
+    {
+      "id": "6e48",
+      "hoTen": "",
+      "Sdt": "",
+      "diaChi": "",
+      "email": "",
+      "thanhToan": "Thanh toán khi giao hàng",
+      "trangThai": "Đang giao"
+    }
+  ],
+  "donHangChiTiet": [
+    {
+      "id": "2922",
+      "id_dh": "6e48",
+      "id_sp": "10",
+      "ten_sp": "Quần Tây Nam Slimfit QTA0036",
+      "so_luong": 4,
+      "gia": "380000",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_97e42ec95db74e9fa48e57a068f88165_master.jpg"
+    }
+  ]
 }

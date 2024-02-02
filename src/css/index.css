@@ -948,7 +948,7 @@ img {
 }
 .cart .cart-box .cart-left table {
   width: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .cart .cart-box .cart-left table thead {
   font-size: 2rem;
@@ -1143,3 +1143,9 @@ img {
   font-size: 1.6rem;
   font-weight: bold;
 }/*# sourceMappingURL=index.css.map */
+/* thong  */
+.model{
+  position: absolute;
+  right: 0;
+  top: 10%;
+}

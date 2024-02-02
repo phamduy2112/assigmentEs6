@@ -328,3 +328,70 @@ tbody tr{
     font-size: 18px;
     cursor: pointer;
 }
+.model {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0, 0, 0, 0.305);
+    width: 100%;
+    height: 100vh;
+    z-index: 20000000;
+    transition: all .5s;
+}
+.model.opa{
+    opacity: 0;
+}
+.model-bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    color: black;
+   width: 400px;
+   
+    border: 1px solid grey;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+}
+.model-bg .model-header{
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid grey;
+}
+.model-bg .model-body{
+    padding: 1rem 2rem;
+    border-bottom: 1px solid grey;
+
+}
+.model-bg .model-footer{
+    padding: 1.2rem 2rem;
+    text-align: right;
+}
+.model-bg .model-footer button{
+    padding: 0.2rem .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.model-bg #tenLoai{
+    width: 100%;
+    height: 2.3rem;
+    padding-left: .7rem;
+    outline: none;
+    
+}
+.home-one{
+    display: flex;
+    gap: 2rem;
+}
+.border-home{
+    border: 1px solid black;
+    width: 300px;
+    
+}
+.border-home__bg{
+    background-color: white;
+    padding: 1.5rem 1rem;
+ 
+ 
+}

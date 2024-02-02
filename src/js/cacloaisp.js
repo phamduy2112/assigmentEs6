@@ -1,5 +1,5 @@
 const hienSpTheoLoai = async (id,mausac='') => {
-  let url = `http://localhost:3000/sanpham?id_loai=${id}`;
+  let url = `http://localhost:3000/sanpham?id_loai=${id}&_limit=5&_page=1`;
 
 
     if (mausac) {
@@ -9,6 +9,7 @@ const hienSpTheoLoai = async (id,mausac='') => {
       const res= await fetch(url)
     const dataSp = await res.json();
     console.log(dataSp);
+    
     const resLoai=await fetch('http://localhost:3000/loai') ;
   const arrLoai=await resLoai.json();
   

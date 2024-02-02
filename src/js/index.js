@@ -1,9 +1,9 @@
 // render menu
 const menuList = async (loai = 1) => {
   let menuItem =
-    loai > 1
-      ? `<li><a href="index.html" class="active">Trang chủ</a></li>`
-      : ``;
+    loai > 1 ?
+    `<li><a href="index.html" class="active">Trang chủ</a></li>` :
+    ``;
   const res = await fetch("http://localhost:3000/loai");
   const menu = await res.json();
   menu.forEach((item) => {
@@ -25,11 +25,12 @@ function header() {
     user = JSON.parse(localStorage.getItem("users"));
 
     renderTenDangNhap = `
-        <a href="" class="header-first__item"> ${user.taikhoan} </a>
+        <a href="./information.html" class="header-first__item"> ${user.taikhoan} </a>
+     
         `;
     // console.log(renderTenDangNhap);
   } else {
-    renderTenDangNhap = `<a href="./sign/sigin.html" class="header-first__item">Đăng nhập ngay</a>`;
+    renderTenDangNhap = `<a href="./sigin.html" class="header-first__item">Đăng nhập ngay</a>`;
   }
 
   const headerRender = `  <div class="desktop">
@@ -106,6 +107,7 @@ function header() {
   hienGioHangheader();
   clickHandle();
 }
+
 function hienGioHangheader() {
   renderGiohang = ` <div class="header-cart__bg">
   <div class="header-cart-title">
@@ -145,6 +147,7 @@ function clickHandle() {
     }
   });
 }
+
 function footer() {
   const footerRender = ` 
     <div class="footer__first">
@@ -152,7 +155,7 @@ function footer() {
             <form action="" method="post">
                 <h4>
                     Đăng ký nhận bản tin của chúng tôi để nhận các tin tức,
-ưu đãi đặc biệt và các khuyến mãi độc quyền
+                    ưu đãi đặc biệt và các khuyến mãi độc quyền
                 </h4>
                 <div class="form-group">
                         <input type="text" placeholder="Mời bạn nhập email">
@@ -234,9 +237,9 @@ async function renderSPBT(
   sanPhamMuoiSau.forEach((item) => (renderSP += rendersanPham(item, hot)));
 
   let render =
-    trangThai == 1
-      ? document.querySelector("#normalSP")
-      : document.querySelector("#product__hot");
+    trangThai == 1 ?
+    document.querySelector("#normalSP") :
+    document.querySelector("#product__hot");
   render.innerHTML = `
 <div class="title">
     <h2>${title}</h2>
@@ -303,7 +306,13 @@ function animationHot() {
 }
 //
 rendersanPham = (sp, id = "") => {
-  let { id: idsp, ten_sp, hinh, gia, ngay } = sp;
+  let {
+    id: idsp,
+    ten_sp,
+    hinh,
+    gia,
+    ngay
+  } = sp;
 
   return `<div class="product__item" id=${id}>
   <a href="productct.html?id=${idsp}">
@@ -316,7 +325,7 @@ rendersanPham = (sp, id = "") => {
     </div>
     <div class="product__title">
         <h3>${ten_sp}</h3>
-        <p class="price">${gia}</p>
+        <p class="price">${Number(gia).toLocaleString("vi")}đ</p>
     </div>
     
     </a>
@@ -342,7 +351,7 @@ const addSP = async (id, soLuong = 1) => {
   document.querySelector("#cartList").innerHTML = renderCart(cart);
   document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
   document.querySelector("#numberCart").innerHTML = numGioHang(cart);
- 
+
 };
 const thayDoiSL = (id, num) => {
   let cart = JSON.parse(localStorage.getItem("giohang"));
@@ -367,24 +376,24 @@ const thayDoiSL = (id, num) => {
   localStorage.setItem("giohang", JSON.stringify(updatedCart));
   // Gọi hàm renderCart() để cập nhật giao diện
   document.querySelector("#cartList").innerHTML = renderCart(cart);
-const listCart=document.querySelector("#listCart");
- if(listCart){
- document.querySelector("#listCart").innerHTML = renderPageCart(cart);
- document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
+  const listCart = document.querySelector("#listCart");
+  if (listCart) {
+    document.querySelector("#listCart").innerHTML = renderPageCart(cart);
+    document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
 
-}
+  }
 
   document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
   document.querySelector("#numberCart").innerHTML = numGioHang(cart);
 
 };
-const renderPageCart = (num=1,cart) => {
-  
+const renderPageCart = (num = 1, cart) => {
+
   cart = JSON.parse(localStorage.getItem("giohang"));
   let renderHtml = ``;
 
-    cart.forEach((item) => { 
-     
+  cart.forEach((item) => {
+
     renderHtml += `
     <td class="product___cart">
     <div class="product__cart">
@@ -423,20 +432,20 @@ const renderPageCart = (num=1,cart) => {
     
   `
 
-  });  
+  });
 
 
   return renderHtml;
 };
 
-const renderCart = (num=1,cart) => {
-  
+const renderCart = (num = 1, cart) => {
+
   cart = JSON.parse(localStorage.getItem("giohang"));
 
   let renderHtml = ``;
 
-    cart.forEach((item) => { 
-     
+  cart.forEach((item) => {
+
     renderHtml += `
    
       <div class="cart-item">
@@ -465,13 +474,13 @@ const renderCart = (num=1,cart) => {
     
   `
 
-  });  
+  });
 
 
   return renderHtml;
 };
 
-const tongCart = (page=1,cart) => {
+const tongCart = (page = 1, cart) => {
   cart = JSON.parse(localStorage.getItem("giohang"));
   let tongSoLuong = 0;
   let tongSoTien = 0;
@@ -480,16 +489,16 @@ const tongCart = (page=1,cart) => {
     tongSoTien += item["soLuong"] * item["gia"];
   });
 
-     return `<div class="layout1">
+  return `<div class="layout1">
     <span>So Luong:</span>${tongSoLuong} <br>
     <span>Tổng:</span>${tongSoTien}
   </div>`;
-  
 
- 
+
+
 
 };
-const tongCartPage = (page=1,cart) => {
+const tongCartPage = (page = 1, cart) => {
   cart = JSON.parse(localStorage.getItem("giohang"));
   let tongSoLuong = 0;
   let tongSoTien = 0;
@@ -522,40 +531,43 @@ const tongCartPage = (page=1,cart) => {
     <p><span>Tổng:</span>${tongSoTien}</p>
   </div>
   <div class="cart-right__item">
-    <button class="btn-cart">Mua ngay</button>
+  <a href="./giohangchitiet.html">
+  <button class="btn-cart">Mua ngay</button>
+  </a>
+    
   </div>
   
 </div>
-` 
+`
 
 };
-const numGioHang=()=>{
-   cart = JSON.parse(localStorage.getItem("giohang"));
-   renderNum=`${cart==undefined ? "0":cart.length}`;
+const numGioHang = () => {
+  cart = JSON.parse(localStorage.getItem("giohang"));
+  renderNum = `${cart==undefined ? "0":cart.length}`;
   return renderNum;
 }
-const xoaIcoin=(id)=>{
+const xoaIcoin = (id) => {
   let cart = JSON.parse(localStorage.getItem("giohang"));
-  let updateCart=cart.filter((sp)=>!(sp.id==id));
+  let updateCart = cart.filter((sp) => !(sp.id == id));
   localStorage.setItem("giohang", JSON.stringify(updateCart));
   document.querySelector("#cartList").innerHTML = renderCart(cart);
-  const listCart=document.querySelector("#listCart");
-   if(listCart){
-   document.querySelector("#listCart").innerHTML = renderPageCart(cart);
-   document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
-  
+  const listCart = document.querySelector("#listCart");
+  if (listCart) {
+    document.querySelector("#listCart").innerHTML = renderPageCart(cart);
+    document.querySelector("#cartBottom__totals").innerHTML = tongCartPage(cart);
+
   }
-  
-    document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
-    document.querySelector("#numberCart").innerHTML = numGioHang(cart);
+
+  document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
+  document.querySelector("#numberCart").innerHTML = numGioHang(cart);
 
 }
 // giỏ hàng
-const pageGiohang=()=>{
- 
+const pageGiohang = () => {
 
-renderPage=
-`<div class="cart">
+
+  renderPage =
+    `<div class="cart">
 <div class="cart-title">
   <h3>Shopping cart</h3>
   <p>${numGioHang()}</p>
@@ -584,13 +596,177 @@ renderPage=
   </div>
 </div>
 </div>`
-  
-document.querySelector("#pageCart").innerHTML=renderPage;
+
+  document.querySelector("#pageCart").innerHTML = renderPage;
+}
+// render gio hang chi tiet
+const renderGiohangCT = () => {
+  const gioHangCT =
+    `<div class="cart-chitiet__box">
+  <div class="cart-chitiet__left">
+      <div class="cart-chitiet__title">
+          <h3>Thông tin thanh toán</h3>
+      </div>
+      <form action="" method="post" class="sign-form">
+          <div class="group-form__two">
+              <div class="group-form__one">
+                  <label for="">Ho ten*</label> 
+                  <div class="group-form__text">
+                    <input type="text" placeholder="Họ Tên" id="hoTen">
+
+                  </div>
+              </div> 
+              <div class="group-form__one">
+                  <label for="">Số điện thoại*</label> 
+                  <div class="group-form__text">
+                    <input type="number" placeholder="vidu@gmail.com" id="sdt">
+
+                  </div>
+                  </div>
+          </div>
+          <div class="group-form__two">
+              <div class="group-form__one">
+                  <label for="">Địa chỉ*</label> 
+                  <div class="group-form__text">
+                    <input type="text" placeholder="vidu@gmail.com" id="diaChi">
+
+                  </div>
+              </div> 
+              <div class="group-form__one">
+                  <label for="">Email*</label> 
+                  <div class="group-form__text">
+                    <input type="gmail" placeholder="vidu@gmail.com" id="email">
+
+                  </div>
+                  </div>
+          </div>
+         
+      </form>
+      <div class="cart-chitiet__thanhtoan">
+          <h4>Bạn muốn thanh toán?</h4>
+          <div class="group-form__radio">
+              <input type="radio" name="asd" id="value1" checked value="Thanh toán khi giao hàng">
+              <label for="value1">Thanh toán khi giao hàng</label>
+          </div>
+          <div class="group-form__radio">
+              <input type="radio" name="asd" id="value1" value="Thanh toán thẻ ngân hàng">
+              <label for="value">Thanh toán thẻ ngân hàng</label>
+          </div>
+      </div>
+      <!-- <div class="cart-chitiet__nganhang">
+
+      </div> -->
+      <div class="buttons">
+          <button class="quaylai">Quay lại</button>
+          <button class="xacnhan" onclick="guiThanhToan()">Xác nhận</button>
+      </div>
+  </div>
+  <div class="cart-chitiet__right">
+   
+          <h3>Giỏ hàng của bạn</h3>
+
+      <div class="cart-chitiet__product">
+          <div class="cart-chitiet__box">
+               <img src="/src/img/ao/ao1.webp" alt="">
+          <div class="cart-chitiet__bottom">
+
+              <div class="cart-chitiet_title">
+                  Lorem ipsum dolor sit amet asd. 
+              </div>
+             
+              <div class="cart-chitiet__soluong">
+                SL:  1
+              </div>
+              <div class="cart-chitiet__price">
+                  3.000.000d
+              </div>
+          </div>
+          </div>
+         
+      </div>
+      <div class="cart-chitiet__product">
+          <div class="cart-chitiet__box">
+               <img src="/src/img/ao/ao1.webp" alt="">
+          <div class="cart-chitiet__bottom">
+
+              <div class="cart-chitiet_title">
+                  Lorem ipsum dolor sit amet asd. 
+              </div>
+             
+              <div class="cart-chitiet__soluong">
+                SL:  1
+              </div>
+              <div class="cart-chitiet__price">
+                  3.000.000d
+              </div>
+          </div>
+          </div>
+         
+      </div>
+      <div class="cart-chitiet__product">
+          <div class="cart-chitiet__box">
+               <img src="/src/img/ao/ao1.webp" alt="">
+          <div class="cart-chitiet__bottom">
+
+              <div class="cart-chitiet_title">
+                  Lorem ipsum dolor sit amet asd. 
+              </div>
+             
+              <div class="cart-chitiet__soluong">
+                SL:  1
+              </div>
+              <div class="cart-chitiet__price">
+                  3.000.000d
+              </div>
+          </div>
+          </div>
+         
+      </div>
+      <div class="cart-chitiet__tong">
+          <div><span>Số lượng:</span>3</div>
+          <div><span>Tổng tiền:</span>3.000.000đ</div>
+      </div>
+    
+  </div>
+</div>
+  `
+  document.querySelector('#cartChiTiet').innerHTML = `${gioHangCT}`;
+}
+// khong co id
+const themItemKoID=(url,data)=>{
+  let opt={method:"post",body:JSON.stringify(data),
+  headers:{'Content-type':'application/json'}
 }
 
-
-
-
-
-// 
-
+return fetch(`${url}`,opt);
+}
+// gui thanh toan 
+const guiThanhToan=()=>{
+  let luuGioHang=new Promise((luuGH,loi)=>{
+    data={
+      hoTen:document.querySelector('#hoTen').value,
+      Sdt:document.querySelector('#sdt').value,
+      diaChi:document.querySelector('#diaChi').value,
+      email:document.querySelector('#email').value,
+      thanhToan:document.querySelector('#value1').value,
+    } 
+    themItemKoID('http://localhost:3000/donHang',data)
+    .then(res=>res.json()).then(d=>luuGH(d))
+    
+   
+  })
+   luuGioHang.then(
+      luuGH=donHang=>{
+        let id_dh=donHang.id;
+        console.log(id_dh);
+        cart = JSON.parse(localStorage.getItem("giohang"));
+        console.log(cart);
+        cart.forEach(sp=>{
+          data={id_dh:id_dh,id_sp:sp.id,ten_sp:sp.ten_sp,so_luong:sp.soLuong,gia:sp.gia,hinh:sp.hinh}
+          themItemKoID('http://localhost:3000/donHangChiTiet',data);
+        })
+      }
+    )
+  //
+  
+}
