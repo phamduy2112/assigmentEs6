@@ -6,22 +6,25 @@
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<link rel="stylesheet" href="../../src/css/admin.css">    
+<link rel="stylesheet" href="../src/css/admin.css">    
 </head>
 <body>
     
 
     <nav class="sidebar" id="sidebar">
-        <form action="">
-          
-        </form>
+        
     </nav>
     <section class="home" id="home">
       
     </section>
-    <script src="../../src/js/admin.js"></script>
-    <script src="../../src/js/hieuung.js"></script>
+    <script src="../src/js/admin.js"></script>
+    <!-- <script src="../../src/js/hieuung.js"></script> -->
     <script>sidebar()</script>
-    <script>themSP()</script>
+    <script> 
+      const params=new URLSearchParams(location.search);
+    let id=params.get('id');
+    console.log(id)
+      suaSP(id)
+    </script>
 </body>
 </html>

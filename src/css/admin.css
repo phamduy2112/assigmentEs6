@@ -239,7 +239,7 @@ body.dark .switch::before{
     position: relative;
     left: 250px;
     height: 100vh;
-    width:calc(100%-250px);
+    width: calc(100% - 250px);
     
     color: var(--text-color);
     transition: var(--tran-05);
@@ -247,7 +247,7 @@ body.dark .switch::before{
 .home .text{
    position: absolute;
    top:55px;
-    font-size: 30px;
+   
     padding: 8px 40px;
     width: 100%;
 }
@@ -264,7 +264,7 @@ body.dark .switch::before{
     background-color: var(--sidebar-color);
 }
 .table_section{
-    width: 80%;
+    width: 100%;
     background-color: white;
 
     padding: 20px;
@@ -305,7 +305,7 @@ th,td{
 }
 .text_Table{
     background-color: white;
-    width: 80%;
+    width: 100%;
     padding: 10px 20px;
     margin-bottom: 20px;
 }
@@ -386,12 +386,164 @@ tbody tr{
 }
 .border-home{
     border: 1px solid black;
-    width: 300px;
+    width: 25%;
     
 }
+
 .border-home__bg{
-    background-color: white;
+  
+background-color: white;
+
     padding: 1.5rem 1rem;
+ color: white;
  
- 
+}
+.border-home__bg.orange{
+    background: linear-gradient(to left,#ee7b5e,#f1957e)}
+.border-home__bg.pink{
+    background:linear-gradient(to left,#d3488e,#da65a0)}
+.border-home__bg.green{
+    background: linear-gradient(to left,#1aa57c,#20c997)
+}
+.border-home__bg.purpe{
+    background: linear-gradient(to left,#8845f5,#aa7af8)
+}
+.home-two{
+    border: 1px solid black;
+    height: 20rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+.home-box{
+    display: flex;
+    gap: 1rem;
+}
+.home-box .home-item:first-child{
+    width: 25%;
+    border: 1px solid black;
+    height: 10rem;
+    background-color: white;
+    padding: 10px 20px;
+}
+.home-item p{
+    font-size: 14px;
+}
+.home-item__b{
+    display: flex;
+    justify-content: space-between;
+}
+.home-item__b i {
+    font-size: 2rem;
+    width: 45px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+}
+.home-box .home-item:nth-child(2){
+    width: 26%;
+    border: 1px solid black;
+    height: 20rem;
+    background-color: white;
+    padding: 10px 20px;
+}
+.home-box .home-item:nth-child(3){
+    width: 49%;
+    border: 1px solid black;
+    height: 20rem;
+    background-color: white;
+    padding: 10px 20px;
+}
+.home-item .item_sp{
+    display: flex;
+
+  gap: 15px;
+  margin-bottom: 5px;
+}
+.item_sp .title_sp p:nth-child(1){
+    font-weight: 500;
+}
+.item_sp .title_sp p:nth-child(2){
+    color: #00b4d8;
+    font-weight: 600;
+}
+.home-item .soluong{
+    text-align: right;
+    width: 100px;
+}
+.home-item .soluong p:nth-child(1){
+    font-weight: bold;
+}
+.home-two .table .text_Table{
+    width: 100%;
+}
+.home-two .table .table_section{
+    width: 100%;
+}
+.home-flex{
+    display: flex;
+    gap: 10px;
+}
+.home-table{
+    width: 50%;
+}
+.form-input label{
+display: block;
+}
+.form-input input{
+    width: 50%;
+    height: 2rem;
+    outline: none;
+    padding: 0 10px;
+}
+.form-input{
+    margin-bottom: 10px;
+}
+.btn{
+    padding: 5px 2rem;
+    background-color: green;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.donhang-flex{
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    gap: 2rem;
+}
+.donhang-flex .donhang-left{
+    width: 60%;
+    height: 100vh;
+    border: 1px solid black;
+}
+.donhang-flex .donhang-right{
+    width: 20%;
+    height: 100vh;
+    border: 1px solid black;
+    background-color: white;
+    scroll-behavior: smooth;
+}
+.donhang-top{
+    background-color: white;
+    padding: 4px 10px;
+}
+.donhang-top__flex{
+    display: flex;
+    justify-content: space-between;
+}
+.thongbao {
+    position: absolute;
+    right: 0;
+    top: 5%;
+}
+.thongbao .thongbao-bg{
+    background-color: #20c996e5;
+    padding:16px 17px;
+ color: white;
 }

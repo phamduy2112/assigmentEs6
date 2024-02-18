@@ -24,19 +24,19 @@ function sidebar(){
         </li>
         <ul class="menu-links">
             <li class="nav-link">
-                <a href="">
+                <a href="index.html">
                     <i class='bx bx-home icon' ></i>
                     <span class="text nav-text">Trang chủ</span>
                 </a>
             </li>
             <li class="nav-link">
-                <a href="">
+                <a href="danhmuc.html">
                     <i class='bx bx-home icon' ></i>
                     <span class="text nav-text">Loại hàng</span>
                 </a>
             </li>
             <li class="nav-link">
-                <a href="">
+                <a href="sanpham.html">
                     <i class='bx bx-home icon' ></i>
                     <span class="text nav-text">Sản phẩm</span>
                 </a>
@@ -48,7 +48,7 @@ function sidebar(){
                 </a>
             </li>
             <li class="nav-link">
-                <a href="">
+                <a href="donhang.html">
                     <i class='bx bx-home icon' ></i>
                     <span class="text nav-text">Đơn hàng</span>
                 </a>
@@ -78,7 +78,226 @@ function sidebar(){
     document.querySelector('#sidebar').innerHTML=renderHeaderAdmin;
     hieuUng();
 }
+ async function homeIndex(){
+    const numLoai = await getNumber('http://localhost:3000/loai'); // Wait for the number to be retrieved
+    const numSP=await getNumber('http://localhost:3000/sanpham');
+    const numKhachHang=await getNumber('http://localhost:3000/users');
+    const numDonHang=await getNumber('http://localhost:3000/donHang');
+    let renderHomeIndex=`  <div class="header__home">
+    asdasd
+</div>
+<div class="text body"> 
+<div class="home-one">
+<div class="border-home">
+    <div class="border-home__bg orange">
+      <p>Loai: <span>${numLoai}</span></p>
+    </div>
+</div>
+<div class="border-home">
+    <div class="border-home__bg pink">
+      <p>San Pham: <span>${numSP}</span></p>
+    </div>
+</div>
+<div class="border-home">
+    <div class="border-home__bg green">
+      <p>Khách hàng: <span>${numKhachHang}</span></p>
+    </div>
+</div>
+<div class="border-home">
+    <div class="border-home__bg purpe">
+      <p>Đơn hàng: <span>${numDonHang}</span></p>
+    </div>
+</div>
 
+
+
+</div>
+<div class="home-two ">
+<div class="home-box">
+    <div class="home-item">
+
+        <h3>Khách hàng</h3>
+        <div class="home-item__b">
+            <div class="home-item-left">
+                    <p>Số lượng khách hàng đăng kí :<span>38</span></p>
+        <p>Số lượng khách hàng đã mua hàng :<span>38</span></p>
+
+            </div>
+
+        <i class='bx bx-user'></i>        
+        </div>
+       
+        </div>
+    <div class="home-item" id="spHot">
+        <h3>Những sản phẩm hot</h3>
+      
+    </div>
+    <div class="home-item">
+
+        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+    </div>
+</div>
+</div>
+<div class="home-two">
+<div class="home-flex">
+      <div class="home-table">
+    <div class="table">
+        <div class="text_Table">
+           <p>Khách hàng đăng kí</p>
+        </div>
+
+
+        <div class="table_section">
+            <div class="table___title">
+            <h4>Thông tin chi tiết</h4>
+            <a href="./themdm.html" class="add">Xem chi tiết</a>
+            </div>
+           
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Ngày</th>
+                    
+                </tr>
+
+            </thead>
+            <tbody id="khachhang">
+  
+            </tr>
+          
+
+
+</tbody>
+        </table>
+            
+        </div>
+
+    </div>
+</div>
+<div class="home-table">
+    <div class="table">
+        <div class="text_Table">
+           <p>Quản lí Đơn Hàng</p>
+        </div>
+
+
+        <div class="table_section">
+            <div class="table___title">
+            <h4>Thông tin chi tiết</h4>
+            <a href="./themdm.html" class="add">Xem chi tiết</a>
+            </div>
+           
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã</th>
+                    <th>Trạng Thái</th>
+                    
+                    <th>Ngày</th>
+                    <th>Chỉnh sữa</th>
+                </tr>
+
+            </thead>
+            <tbody id="donHangMoi">
+   
+
+</tbody>
+        </table>
+            
+        </div>
+
+    </div>
+</div> 
+</div>
+
+</div>
+</div>`
+
+document.querySelector("#homeImdex").innerHTML=renderHomeIndex;
+khachHangDangKi()
+spHot()
+donHangMoi();
+}
+// 3 khach hang dang ki mới
+async function khachHangDangKi (){
+    const resp=await fetch('http://localhost:3000/users?_limit=3&_sort=-id');
+    const khachHang=await resp.json();
+    khachHang.map((item)=>{
+        return document.querySelector('#khachhang').innerHTML+=`
+        <tr>
+        <td>1</td>
+        <td>${item.fullName}</td>
+        <td>${item.email}</td>
+    
+        <td>${item.ngay}</td> 
+   
+        </tr>
+        `
+    })
+}
+// sp hot
+async function spHot(){
+    const resp=await fetch('http://localhost:3000/sanpham?_limit=10');
+    const sp=await resp.json();
+    sp.map((item)=>{
+        if(item.hot>0){
+              return document.querySelector('#spHot').innerHTML+=`
+        <div class="item_sp">
+        <img src="https://product.hstatic.net/1000096703/product/1_d4c95fe0dc8a47e28b0b3d3083498997_master.jpg" alt="" width="50px">
+        <div class="title_sp">
+            <p>${item.ten_sp}
+            </p>
+            <p>${(item.gia)}</p>
+        </div>
+        <div class="soluong">
+            <p>${item.hot}</p>
+            <p>Người mua</p>
+        </div>
+    </div>
+        `  
+        }
+    
+    })
+}
+// đơn hàng mới nhất
+const donHangMoi=()=>{
+    let baDonHang=new Promise((donHang,loi)=>{
+       donHang();
+    })
+    baDonHang.then(
+       async function donHang(){
+            const resp=await fetch('http://localhost:3000/donHang?_limit=3&_sort=-id');
+            const donHangMoi=await resp.json();
+            donHangMoi.map((item)=>{
+                return document.querySelector('#donHangMoi').innerHTML+=`
+                <tr>
+                <td>${item.id}</td>
+                <td>${item.trangThai}</td>
+                <td>${item.ngay}</td>
+            
+                <td>
+                <a href="donhangchitiet.html?id=${item.id}">Xem chi tiết</a>
+    <a href="suadonhang.html?id=${item.id}"">Chỉnh sữa</a>
+                </td> 
+           
+                </tr>
+                `
+            })
+
+        }
+    )
+}
+const getNumber=async (link)=>{   
+     const resp=await fetch(`${link}`);
+        const resNum=await resp.json();
+        console.log(resNum.length);
+        return resNum.length
+  
+}
 function home(){
     let renderHomeAdmin=
     ` <div class="header__home">
@@ -124,6 +343,18 @@ renderDM();
 
 }
 
+const thongbao=(title)=>{
+document.querySelector('#home').innerHTML+=`
+
+<div class="thongbao">
+<div class="thongbao-bg">
+    <div class="title">
+        ${title}
+    </div>
+</div>
+</div>
+`
+}
 
 // Loai
 const renderDM=async ()=>{
@@ -146,11 +377,20 @@ loaiArray.forEach((item)=>{
 })
 
 document.querySelector("#danhmuc").innerHTML=renderTenLoai;
+
 document.querySelectorAll('#delete').forEach((sp)=>sp.addEventListener('click',(e)=>{
     let id=e.target.dataset.id;
     // xoaItem('http://localhost:3000/loai',id);
     xoaItem('http://localhost:3000/loai',id);
-    document.location="./danhmuc.html"
+    let chuyendm=setTimeout(()=>{
+        document.location='./danhmuc.html'
+       
+    },1000)
+    if(chuyendm){
+        setTimeout(()=>{
+            thongbao('Xoá danh mục thành công !');
+        },0)
+    }
  }))
 }
 
@@ -169,12 +409,15 @@ const themLoai=()=>{
 
         <div class="table_section">
         <form>
+        <div class="form-input">
         <label>Tên loại
         </label>
-        <br>
+       
         <input type="text" id="tenLoai">
+        </div>
+       
         </form>
-        <button id="addLoai">Thêm</button>
+        <button id="addLoai" class="btn">Thêm</button>
           </div>
 
 </div>`
@@ -182,20 +425,32 @@ document.querySelector("#home").innerHTML+=renderThemLoai;
 document.querySelector('#addLoai').addEventListener('click',function(){
    let data={ten_loai:document.getElementById('tenLoai').value}
    addItem('http://localhost:3000/loai',data);
-   document.location='./danhmuc.html'
+    let chuyendm=setTimeout(()=>{
+        document.location='./danhmuc.html'
+        
+        
+    },1000)
+    if(chuyendm){
+        setTimeout(()=>{
+            thongbao('Thêm danh mục thành công !');
+        },0)
+    }
+   
 });
 
 }
 
-const addItem=(url,loai)=>{
+const addItem=async (url,loai)=>{
     let opt={method:"post",body:JSON.stringify(loai),
     headers:{'Content-Type':'application/json'}
 
     
 }
-// console.log(opt);
-return fetch(`${url}`,opt)
-.then(res=>res.json()).then(d=>d)
+
+    const res = await fetch(`${url}`, opt);
+    const d = await res.json();
+    console.log(d);
+    return d;
 }
 
 const xoaItem=(url,id)=>{
@@ -219,12 +474,15 @@ const suaLoai=async (id)=>{
   
           <div class="table_section">
           <form>
-          <label>Tên loại
-          </label>
-          <br>
-          <input type="text" id="tenLoai" value=${loai.ten_loai}>
-          </form>
-          <button id="suaLoai">Sửa</button>
+        <div class="form-input">
+        <label>Tên loại
+        </label>
+       
+        <input type="text" id="tenLoai" value=${loai.ten_loai}>
+        </div>
+       
+        </form>
+        <button id="suaLoai" class="btn">Sửa</button>
             </div>
   
   </div>`
@@ -232,7 +490,14 @@ const suaLoai=async (id)=>{
   document.querySelector('#suaLoai').addEventListener('click',function(){
      let data={id:id,ten_loai:document.getElementById('tenLoai').value}
      suaItem('http://localhost:3000/loai',id,data);
-     document.location='./danhmuc.html';
+    let chuyendm= setTimeout(()=>{
+        document.location='./danhmuc.html'
+    },1000)
+    if(chuyendm){
+        setTimeout(()=>{
+            thongbao('Sửa danh mục thành công !');
+        },0)
+    }
   });
   
   }
@@ -297,7 +562,7 @@ document.querySelector("#home").innerHTML=renderHomeAdmin;
 renderSP()
 }
 const renderSP=async ()=>{
-const res=await fetch('http://localhost:3000/sanpham');
+const res=await fetch('http://localhost:3000/sanpham?_sort=-id');
 const sanPham=await res.json();
 const resLoai=await fetch('http://localhost:3000/loai');
 const loai=await resLoai.json();
@@ -333,7 +598,14 @@ document.querySelectorAll('#delete').forEach((sp)=>sp.addEventListener('click',(
     let id=e.target.dataset.id;
     // console.log(id);
     xoaItem('http://localhost:3000/sanpham',id);
-    document.location=`./sanpham.html`
+    let chuyendm= setTimeout(()=>{
+        document.location='./sanpham.html'
+    },1000)
+    if(chuyendm){
+        setTimeout(()=>{
+            thongbao('Xoá sản phẩm thành công !');
+        },0)
+    }
 }))
 }
 
@@ -365,31 +637,37 @@ const themSP=async()=>{
 
         <div class="table_section">
         <form>
-        <label>Tên Sản phẩm
+       
+        <div class="form-input">
+        <label>Tên Sản Phẩm
         </label>
-        <br>
+       
         <input type="text" id="tenSP">
-        <br>
-        <label>Hình
+        </div>
+        <div class="form-input">
+        <label> Hình Sản Phẩm
         </label>
-        <br>
+       
         <input type="text" id="hinhSP">
-        <br>
-        <label>Giá
+        </div>
+        <div class="form-input">
+        <label>Giá Sản Phẩm
         </label>
-        <br>
+       
         <input type="text" id="giaSP">
-        <br>
+        </div>
+       
+       
         <label>Loại
         </label>
         <br>
-        <select name="" id="idLoai">
+        <select name="" id="idLoai" style="margin-bottom:10px; width:10%">
   ${select}
   </select>
        
         <br>
         </form>
-        <button id="addSP">Thêm</button>
+        <button id="addSP" class="btn">Thêm</button>
           </div>
 
 </div>`
@@ -403,7 +681,14 @@ document.querySelector('#addSP').addEventListener('click',()=>{
         id_loai:document.querySelector('#idLoai').value
     }
     addItem('http://localhost:3000/sanpham',data)
-    document.location="./sanpham.html";
+    let chuyendm= setTimeout(()=>{
+        document.location='./sanpham.html'
+    },1000)
+    if(chuyendm){
+        setTimeout(()=>{
+            thongbao('Thêm sản phẩm thành công !');
+        },0)
+    }
 })
 }
 // form suaSP
@@ -435,31 +720,37 @@ const suaSP=async (id)=>{
 
         <div class="table_section">
         <form>
-        <label>Tên Sản phẩm
+        <div class="form-input">
+        <label>Tên Sản Phẩm
         </label>
-        <br>
+       
         <input type="text" id="tenSP" value=${loai.ten_sp}>
-        <br>
-        <label>Hình
+        </div>
+        <div class="form-input">
+        <label>Tên Sản Phẩm
         </label>
-        <br>
+       
         <input type="text" id="hinhSP" value=${loai.hinh}>
-        <br>
-        <label>Giá
+        </div>
+        <div class="form-input">
+        <label>Tên Sản Phẩm
         </label>
-        <br>
+       
         <input type="text" id="giaSP" value="${loai.gia}">
-        <br>
+        </div>
+     
+       
+       
         <label>Loại
         </label>
         <br>
-        <select name="" id="idLoai">
+        <select name="" id="idLoai" style="margin-bottom:10px; width:10%">
         ${select}
         </select>
        
         <br>
         </form>
-        <button id="suaItem">Thêm</button>
+        <button id="suaItem" class="btn">Thêm</button>
           </div>
 
 </div>`
@@ -472,7 +763,14 @@ document.querySelector('#suaItem').addEventListener('click',function(){
     id_loai:document.querySelector('#idLoai').value
 }
 suaItem('http://localhost:3000/sanpham',id,data);
-   document.location='./sanpham.html'
+let chuyendm= setTimeout(()=>{
+    document.location='./sanpham.html'
+},1000)
+if(chuyendm){
+    setTimeout(()=>{
+        thongbao('Sửa sản phẩm thành công !');
+    },0)
+}
 });
 
 }
@@ -552,9 +850,13 @@ renderDH()
 }
 const renderDH=async ()=>{
 let resp=await fetch('http://localhost:3000/donHang');
+
 let resDH=await resp.json();
+
 let renderDonHang=``;
 resDH.forEach((sp)=>{
+    let trangThaiHang= sp.trangThai!=='Đang giao' ? '' :`    <a href="suadonhang.html?id=${sp.id}"">Chỉnh sữa</a>
+    `
     renderDonHang+=` <tr>
             
     <td>${sp.id}</td>
@@ -566,8 +868,7 @@ resDH.forEach((sp)=>{
     <td>
     
     <a href="donhangchitiet.html?id=${sp.id}">Xem chi tiết</a>
-    <a href="">Chỉnh sữa</a>
-    
+    ${trangThaiHang}
     </td>
    
     </tr>`
@@ -644,4 +945,55 @@ resDH.forEach((sp)=>{
 })
 document.querySelector('#sanpham').innerHTML=renderDonHang;
 
+}
+const suaDH=async (id)=>{
+    let donhang=await layID("http://localhost:3000/donHang",id);
+  
+const renderSuaDH= ` <div class="header__home">
+    asdasd
+</div>
+<div class="text body"> 
+  
+    <div class="table">
+        <div class="text_Table">
+           <p>Quản lí Loại Hàng</p>
+        </div>
+        
+
+        <div class="table_section">
+        <form>
+        
+        <label>Loại
+        </label>
+        <br>
+        <select name="" id="idTrangThai" style="margin-bottom:10px; width:10%">
+            <option value="${donhang.trangThai}">${donhang.trangThai}</option>
+            <option value="Thành công">Thành công</option>
+            <option value="Không thành công">Không thành công</option>
+        </select>
+       
+        <br>
+        </form>
+        <button id="suaItem" class="btn">Sửa</button>
+          </div>
+
+</div>`
+document.querySelector("#home").innerHTML+=renderSuaDH;
+document.querySelector('#suaItem').addEventListener('click',function(){
+    let data={
+  ...donhang,
+     trangThai:document.querySelector('#idTrangThai').value
+        
+    }
+
+ suaItem('http://localhost:3000/donHang',id,data);
+ let chuyendm= setTimeout(()=>{
+     document.location='./donhang.html'
+ },1000)
+ if(chuyendm){
+     setTimeout(()=>{
+         thongbao('Sửa đơn hàng thành công !');
+     },0)
+ }
+ });
 }

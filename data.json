@@ -20,23 +20,58 @@
   "users": [
     {
       "id": "1",
-      "taikhoan": "duyp7484",
+      "fullName": "duyp7484",
       "email": "duyp7484@gmail.com",
       "matkhau": "Ngocduy1",
-      "vaitro": 1
+      "vaitro": 1,
+      "ngay": "18/2/2024"
     },
     {
       "id": "2",
-      "taikhoan": "duyp7454",
+      "fullName": "duyp7454",
       "email": "duyp7454@gmail.com",
       "matkhau": "Ngocduy1",
-      "vaitro": 0
+      "vaitro": 0,
+      "ngay": "18/2/2024"
     },
     {
       "id": "955f",
       "fullName": "duy",
       "email": "phamngocquang44@yahoo.com",
       "password": "NGocduy1",
+      "vaitro": 0,
+      "ngay": "18/2/2024"
+    },
+    {
+      "id": "d422",
+      "fullName": "duy",
+      "email": "namtiheo115@gmail.com",
+      "password": "Ngocduy1",
+      "ngay": "18/2/2024;",
+      "vaitro": 0
+    },
+    {
+      "id": "5f7d",
+      "fullName": "duy",
+      "email": "phamngocquang44@yahoo.com",
+      "password": "123214",
+      "ngay": "18/2/2024;",
+      "vaitro": 0
+    },
+    {
+      "id": "5771",
+      "fullName": "duy123",
+      "email": "1",
+      "password": "Ngocduy1",
+      "ngay": "18/2/2024;",
+      "vaitro": 0
+    },
+    {
+      "id": "b241",
+      "fullName": "duy123",
+      "email": "duyp7484@gmail.com1",
+      "password": "23213",
+      "ngay": "18/2/2024;",
       "vaitro": 0
     }
   ],
@@ -63,7 +98,7 @@
       "ngay": "2024-02-01",
       "mau_sac": "xám",
       "xem": "525",
-      "hot": "0"
+      "hot": "10"
     },
     {
       "id": "3",
@@ -75,7 +110,7 @@
       "ngay": "2024-02-01",
       "mau_sac": "xanh lá",
       "xem": "525",
-      "hot": "0"
+      "hot": "10"
     },
     {
       "id": "4",
@@ -99,7 +134,7 @@
       "ngay": "2024-02-01",
       "mau_sac": "xanh lá",
       "xem": "525",
-      "hot": "0"
+      "hot": "10"
     },
     {
       "id": "6",
@@ -111,7 +146,7 @@
       "ngay": "2024-02-01",
       "mau_sac": "xám",
       "xem": "525",
-      "hot": "0"
+      "hot": "10"
     },
     {
       "id": "7",
@@ -282,11 +317,11 @@
       "hot": "0"
     },
     {
-      "ten_sp": "duy123123",
-      "gia": "2",
-      "hinh": "https://product.hstatic.net/1000096703/product/1_35fb0efdf94648259b5fd84b67d61f9a_master.jpg",
+      "ten_sp": "duy",
+      "gia": "333333",
+      "hinh": "https://monafashion.monamedia.net/wp-content/uploads/2023/12/16429-slide-products-61aae3d8a58ce-300x300.jpg",
       "id_loai": "1",
-      "id": "c1a2"
+      "id": "8a32"
     }
   ],
   "thuoc_tinh": [
@@ -356,13 +391,24 @@
   ],
   "donHang": [
     {
-      "id": "6e48",
-      "hoTen": "",
-      "Sdt": "",
-      "diaChi": "",
-      "email": "",
+      "id": "5cbc",
+      "hoTen": "duy",
+      "Sdt": "033449111",
+      "diaChi": "ads",
+      "email": "duyp7484@gmail.com",
       "thanhToan": "Thanh toán khi giao hàng",
-      "trangThai": "Đang giao"
+      "trangThai": "Không thành công",
+      "ngay": "18/2/2024;"
+    },
+    {
+      "id": "d90f",
+      "hoTen": "duy",
+      "Sdt": "033449111",
+      "diaChi": "ads",
+      "email": "duyp7484@gmail.com",
+      "thanhToan": "Thanh toán khi giao hàng",
+      "trangThai": "Thành công",
+      "ngay": "18/2/2024;"
     }
   ],
   "donHangChiTiet": [
@@ -374,6 +420,51 @@
       "so_luong": 4,
       "gia": "380000",
       "hinh": "https://product.hstatic.net/1000096703/product/1_97e42ec95db74e9fa48e57a068f88165_master.jpg"
+    },
+    {
+      "id": "f306",
+      "id_dh": "e016",
+      "id_sp": "4",
+      "ten_sp": "Giày Nike Air Jordan 1 Low",
+      "so_luong": 2,
+      "gia": "320000",
+      "hinh": "https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg"
+    },
+    {
+      "id": "2292",
+      "id_dh": "fe7a",
+      "id_sp": "4",
+      "ten_sp": "Giày Nike Air Jordan 1 Low",
+      "so_luong": 2,
+      "gia": "320000",
+      "hinh": "https://tyhisneaker.com/wp-content/uploads/2023/06/giay-nike-air-jordan-1-low-aluminum-ice-blue-like-auth.jpg"
+    },
+    {
+      "id": "f466",
+      "id_dh": "dbf4",
+      "id_sp": "3",
+      "ten_sp": "Áo Thun Polo Tay Dài ATD0013",
+      "so_luong": 4,
+      "gia": "400000",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_eb2901d04c0c4aad881d6e7f4fd0ac19_master.jpg"
+    },
+    {
+      "id": "9419",
+      "id_dh": "5cbc",
+      "id_sp": "6",
+      "ten_sp": "Quần Tây Lưng Thun QTA0044",
+      "so_luong": 3,
+      "gia": "380000",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_068c55318962447abeeb50f67a42d5f0_master.jpg"
+    },
+    {
+      "id": "dce1",
+      "id_dh": "d90f",
+      "id_sp": "6",
+      "ten_sp": "Quần Tây Lưng Thun QTA0044",
+      "so_luong": 3,
+      "gia": "380000",
+      "hinh": "https://product.hstatic.net/1000096703/product/1_068c55318962447abeeb50f67a42d5f0_master.jpg"
     }
   ]
 }

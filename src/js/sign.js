@@ -140,6 +140,14 @@ function dangNhap(){
         
  })   
 }
+
+export const layNgayThangHT=()=>{
+    const current=new Date();
+    const nam=current.getFullYear();
+    const thang=current.getMonth()+1;
+    const ngay=current.getDate();
+    return `${ngay}/${thang}/${nam};`
+}
 function chucNangDangKi(){
     document.querySelector('#submit').addEventListener('click',e=>{
         e.preventDefault();
@@ -148,6 +156,9 @@ function chucNangDangKi(){
             fullName:document.querySelector('#fullName').value,
             email:document.querySelector('#email').value,
             password:document.querySelector('#password').value,
+            ngay:layNgayThangHT(),
+            vaitro:0,
+
         }
         opt={
             method:"POST",body:JSON.stringify(dataUser),
@@ -160,8 +171,14 @@ function chucNangDangKi(){
 
     })
     themTk.then(
-        xuli=(sp)=>{
-            alert("Thành công")
+        xuli=(value)=>{
+           
+            localStorage.setItem('users', JSON.stringify(value));
+       
+                window.location.href = "./index.html";
+           
+     
+            alert("Đăng kí Thành công");
         },
         thongbao=err=>console.log(err),
     )

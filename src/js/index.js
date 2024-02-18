@@ -1,3 +1,10 @@
+const layNgayThangHT=()=>{
+  const current=new Date();
+  const nam=current.getFullYear();
+  const thang=current.getMonth()+1;
+  const ngay=current.getDate();
+  return `${ngay}/${thang}/${nam};`
+}
 // render menu
 const menuList = async (loai = 1) => {
   let menuItem =
@@ -18,6 +25,58 @@ const menuList = async (loai = 1) => {
     document.querySelector("#loai_id").innerHTML = menuItem;
   }
 };
+const startTime = new Date(); // Lấy thời gian hiện tại
+function ngayGioPhutGiay(){
+  const targetDate = new Date("2024-03-21 18:00:00"); // Example: March 21, 2024, 6:00 PM
+
+// Start the countdown
+setInterval(() => startCountdown(targetDate), 1000);
+
+    let renderCountDown=`       <div class="hinhtron">
+    <span class="ngay" id="days"></span>
+</div>
+<div class="hinhtron">
+    <span class="ngay" id="hours"></span>
+</div>
+<div class="hinhtron">
+    <span class="ngay" id="minutes"></span>
+</div>
+<div class="hinhtron">
+    <span class="ngay" id="seconds"></span>
+</div>`
+document.querySelector('.uudai_hinh').innerHTML+=renderCountDown;
+}
+// Hàm cập nhật hiển thị countdown
+function startCountdown(targetDate) {
+
+  const currentDate = new Date();
+
+
+  const timeDifference = targetDate.getTime() - currentDate.getTime();
+
+
+
+
+  // hàm tính toán
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+
+  const formattedDays = (days > 0) ? `${days} ` : '';
+  const formattedHours = (hours < 10) ? `0${hours}` : hours;
+  const formattedMinutes = (minutes < 10) ? `0${minutes}` : minutes;
+  const formattedSeconds = (seconds < 10) ? `0${seconds}` : seconds;
+
+
+  document.querySelector("span#days").innerHTML = `${formattedDays} <div>Ngày</div>`;
+  document.querySelector("span#hours").innerHTML = `${formattedHours} <div>Giờ</div>`;
+  document.querySelector("span#minutes").innerHTML = `${formattedMinutes} <div>Phút</div>`;
+  document.querySelector("span#seconds").innerHTML = `${formattedSeconds} <div>Giay</div>`;
+}
+
+
 
 function header() {
   // renderTenDangNhap=``;
@@ -25,7 +84,7 @@ function header() {
     user = JSON.parse(localStorage.getItem("users"));
 
     renderTenDangNhap = `
-        <a href="./information.html" class="header-first__item"> ${user.taikhoan} </a>
+        <a href="./information.html" class="header-first__item"> ${user.fullName} </a>
      
         `;
     // console.log(renderTenDangNhap);
@@ -331,6 +390,7 @@ rendersanPham = (sp, id = "") => {
     </a>
     
 </div>`;
+
 };
 
 const addSP = async (id, soLuong = 1) => {
@@ -350,9 +410,14 @@ const addSP = async (id, soLuong = 1) => {
   localStorage.setItem("giohang", JSON.stringify(cart));
   document.querySelector("#cartList").innerHTML = renderCart(cart);
   document.querySelector("#cartBottom__total").innerHTML = tongCart(cart);
-  document.querySelector("#numberCart").innerHTML = numGioHang(cart);
+  document.querySelector("#numberCart").innerHTML = numGioHang(cart); 
+  thongbao('Đặt hàng thành công');
+
+
+
 
 };
+
 const thayDoiSL = (id, num) => {
   let cart = JSON.parse(localStorage.getItem("giohang"));
   // console.log(id);
@@ -361,6 +426,9 @@ const thayDoiSL = (id, num) => {
     if (num === 1) {
       if (item.id == id) {
         item.soLuong = item.soLuong - 1;
+        if(item.soLuong<1){
+          alert("Ban co muon xoa sp k")
+       }
       }
     } else {
       if (item.id == id) {
@@ -370,7 +438,9 @@ const thayDoiSL = (id, num) => {
 
     return item;
   });
-  let updatedCart = cart.filter((item) => item.soLuong > 0);
+
+  
+  let updatedCart = cart.filter((item) =>item.soLuong > 0);
 
   console.log(updatedCart);
   localStorage.setItem("giohang", JSON.stringify(updatedCart));
@@ -599,6 +669,7 @@ const pageGiohang = () => {
 
   document.querySelector("#pageCart").innerHTML = renderPage;
 }
+
 // render gio hang chi tiet
 const renderGiohangCT = () => {
   const gioHangCT =
@@ -661,76 +732,21 @@ const renderGiohangCT = () => {
           <button class="xacnhan" onclick="guiThanhToan()">Xác nhận</button>
       </div>
   </div>
-  <div class="cart-chitiet__right">
+  <div class="cart-chitiet__right" id="cart-ct-right">
    
           <h3>Giỏ hàng của bạn</h3>
 
-      <div class="cart-chitiet__product">
-          <div class="cart-chitiet__box">
-               <img src="/src/img/ao/ao1.webp" alt="">
-          <div class="cart-chitiet__bottom">
-
-              <div class="cart-chitiet_title">
-                  Lorem ipsum dolor sit amet asd. 
-              </div>
-             
-              <div class="cart-chitiet__soluong">
-                SL:  1
-              </div>
-              <div class="cart-chitiet__price">
-                  3.000.000d
-              </div>
-          </div>
-          </div>
-         
-      </div>
-      <div class="cart-chitiet__product">
-          <div class="cart-chitiet__box">
-               <img src="/src/img/ao/ao1.webp" alt="">
-          <div class="cart-chitiet__bottom">
-
-              <div class="cart-chitiet_title">
-                  Lorem ipsum dolor sit amet asd. 
-              </div>
-             
-              <div class="cart-chitiet__soluong">
-                SL:  1
-              </div>
-              <div class="cart-chitiet__price">
-                  3.000.000d
-              </div>
-          </div>
-          </div>
-         
-      </div>
-      <div class="cart-chitiet__product">
-          <div class="cart-chitiet__box">
-               <img src="/src/img/ao/ao1.webp" alt="">
-          <div class="cart-chitiet__bottom">
-
-              <div class="cart-chitiet_title">
-                  Lorem ipsum dolor sit amet asd. 
-              </div>
-             
-              <div class="cart-chitiet__soluong">
-                SL:  1
-              </div>
-              <div class="cart-chitiet__price">
-                  3.000.000d
-              </div>
-          </div>
-          </div>
-         
-      </div>
-      <div class="cart-chitiet__tong">
-          <div><span>Số lượng:</span>3</div>
-          <div><span>Tổng tiền:</span>3.000.000đ</div>
-      </div>
+  
+     
+     
+ 
     
   </div>
 </div>
   `
   document.querySelector('#cartChiTiet').innerHTML = `${gioHangCT}`;
+  renderGiohangCTRight()
+  cartCTTT()
 }
 // khong co id
 const themItemKoID=(url,data)=>{
@@ -749,6 +765,8 @@ const guiThanhToan=()=>{
       diaChi:document.querySelector('#diaChi').value,
       email:document.querySelector('#email').value,
       thanhToan:document.querySelector('#value1').value,
+      trangThai:'Đang giao',
+      ngay:layNgayThangHT(),
     } 
     themItemKoID('http://localhost:3000/donHang',data)
     .then(res=>res.json()).then(d=>luuGH(d))
@@ -758,7 +776,15 @@ const guiThanhToan=()=>{
    luuGioHang.then(
       luuGH=donHang=>{
         let id_dh=donHang.id;
-        console.log(id_dh);
+        setTimeout(()=>{
+            modal(id_dh);
+            setTimeout(()=>{
+              document.location='./index.html'
+             
+            },1000)
+        },1000);
+       
+      
         cart = JSON.parse(localStorage.getItem("giohang"));
         console.log(cart);
         cart.forEach(sp=>{
@@ -770,3 +796,98 @@ const guiThanhToan=()=>{
   //
   
 }
+// render gio hang ct ben phai
+const renderGiohangCTRight = () => {
+  let cart = JSON.parse(localStorage.getItem("giohang"));
+  if (!cart) {
+      return; // Xử lý trường hợp không có giỏ hàng
+  }
+  console.log(cart);
+  let renderCart = ``;
+  cart.forEach((sp) => {
+      console.log(sp);
+      renderCart += `
+      <div class="cart-chitiet__product">
+          <div class="cart-chitiet__box">
+              <img src="${sp.hinh}" alt="">
+          </div>
+          <div class="cart-chitiet__bottom">
+              <div class="cart-chitiet_title">
+               ${sp.ten_sp}
+              </div>
+              <div class="cart-chitiet__soluong">
+                  SL: ${sp.soLuong}
+              </div>
+              <div class="cart-chitiet__price">
+                  ${sp.gia}
+              </div>
+          </div>
+      </div>
+      `;
+  });
+  const cartElement = document.querySelector('.cart-chitiet__right');
+ 
+  if (cartElement) {
+      cartElement.innerHTML +=renderCart;
+  } else {
+      console.error("Phần tử có ID 'cart-ct-right' không tồn tại!");
+  }
+};
+
+const cartCTTT=()=>{
+  let cart = JSON.parse(localStorage.getItem("giohang"));
+  let totalCart=0;
+  let soLuong=0;
+  cart.forEach((sp)=>{
+    soLuong+=sp.soLuong;
+    totalCart+=Number(sp.gia*sp.soLuong)
+  })  
+  let renderTTCart=`
+  <div class="cart-chitiet__tong">
+<div><span>Số lượng:</span>${soLuong}</div>
+<div><span>Tổng tiền:</span>${totalCart}</div>
+</div>
+  `;
+  document.querySelector('.cart-chitiet__right').innerHTML+=renderTTCart;
+}
+{/* thong bao */}
+const modal=(id)=>{
+  document.querySelector('.cart-chitiet').innerHTML+=`   <div class="cart-model">
+  <div class="cart-model-bg">
+      <div class="cart-model-header">Đặt hàng</div>
+      <div class="cart-model-body">Cảm ơn bạn đã quan tâm đặt hàng
+      <p>Đơn hàng của bạn:${id}</p>
+    
+      </div>
+      <div class="cart-model-footer">
+        <button>Đóng</button>
+        <button>OK</button>
+      </div>
+  </div>
+</div>`
+}
+// thông báo
+ function thongbao(title) {
+  const container = document.createElement('div');
+  container.classList.add('thongbao');
+
+  const background = document.createElement('div');
+  background.classList.add('thongbao-bg');
+  container.appendChild(background);
+
+  const titleElement = document.createElement('div');
+  titleElement.classList.add('title1');
+  titleElement.textContent = title;
+  background.appendChild(titleElement);
+
+  // Append the container immediately for clarity and correct timing
+  document.body.appendChild(container);
+
+  // Set a timeout to remove the notification after 3 seconds
+  setTimeout(() => {
+    container.remove();
+  }, 2000);
+}
+
+// Call the function to create and automatically remove the notification
+

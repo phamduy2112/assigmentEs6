@@ -1,3 +1,4 @@
+
 const renderInforLeft=()=>{
   document.querySelector('.information-box__left').innerHTML=`
  <div class="information-box__top">
@@ -13,7 +14,7 @@ const renderInforLeft=()=>{
      <li><a href="">Thông tin chi tiết</a></li>
      <li><a href="">Yêu thích</a></li>
      <li><a href="">Đơn hàng</a></li>
-     <li><a href="" onclick="dangXuat()">Đăng xuất</a></li>
+     <li><a href="./index.html" onclick="dangXuat()">Đăng xuất</a></li>
   
  </ul>
 </div>
@@ -34,7 +35,7 @@ document.querySelector('.information-box__right').innerHTML=
     <div class="group-form">
         <label for="">Fullname*</label> 
         <div class="group-form__text">
-          <input type="gmail" placeholder="vidu@gmail.com" value=${user.taikhoan}>
+          <input type="gmail" placeholder="vidu@gmail.com" value=${user.fullName}>
 
         </div>
     </div>
@@ -80,7 +81,7 @@ document.querySelector('.information-box__right').innerHTML=
 </form>
 </div>`;
 }
-const dangXuat=()=>{
-localStorage.removeItem('users');
-window.location.href = "./sigin.html";
-}
+const dangXuat = () => {
+  localStorage.removeItem('users');  // Bỏ ghi chú dòng này nếu cần xóa dữ liệu local storage
+  alert('Đăng xuất thành công')
+};
