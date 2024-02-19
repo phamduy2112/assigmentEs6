@@ -613,8 +613,9 @@ const tongCartPage = (page = 1, cart) => {
 };
 const numGioHang = () => {
   cart = JSON.parse(localStorage.getItem("giohang"));
-  renderNum = `${cart==undefined ? "0":cart.length}`;
+  renderNum = `${cart==''||null ? "0" : cart.length}`;
   return renderNum;
+
 }
 const xoaIcoin = (id) => {
   let cart = JSON.parse(localStorage.getItem("giohang"));
@@ -756,6 +757,7 @@ const themItemKoID=(url,data)=>{
 
 return fetch(`${url}`,opt);
 }
+
 // gui thanh toan 
 const guiThanhToan=()=>{
   let luuGioHang=new Promise((luuGH,loi)=>{
@@ -780,7 +782,7 @@ const guiThanhToan=()=>{
             modal(id_dh);
             setTimeout(()=>{
               document.location='./index.html'
-             
+           
             },1000)
         },1000);
        
@@ -849,6 +851,7 @@ const cartCTTT=()=>{
 </div>
   `;
   document.querySelector('.cart-chitiet__right').innerHTML+=renderTTCart;
+  
 }
 {/* thong bao */}
 const modal=(id)=>{

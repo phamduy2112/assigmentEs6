@@ -140,8 +140,7 @@ function dangNhap(){
         
  })   
 }
-
-export const layNgayThangHT=()=>{
+const layNgayThangHT=()=>{
     const current=new Date();
     const nam=current.getFullYear();
     const thang=current.getMonth()+1;

@@ -221,6 +221,31 @@ document.querySelector("#homeImdex").innerHTML=renderHomeIndex;
 khachHangDangKi()
 spHot()
 donHangMoi();
+bieudo()
+}
+// bieu do
+function bieudo(){
+    const xValues = ["Ngay thứ nhất", "Ngay thứ hai", "Ngay thứ ba", "Ngay thứ tư", "Ngay thứ năm","Ngay thứ sau","Ngay thứ bảy"];
+        const yValues = [55, 49, 44, 24, 21,22,35];
+        const barColors = ["red", "green","blue","orange","brown","orange",'yellow'];
+        
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: "Doanh thu trong 7 ngày qua"
+            }
+          }
+        });
 }
 // 3 khach hang dang ki mới
 async function khachHangDangKi (){

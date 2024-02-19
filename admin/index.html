@@ -21,29 +21,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-    <script>
-        const xValues = ["Ngay thứ nhất", "Ngay thứ hai", "Ngay thứ ba", "Ngay thứ tư", "Ngay thứ năm","Ngay thứ sau","Ngay thứ bảy"];
-        const yValues = [55, 49, 44, 24, 21,22,35];
-        const barColors = ["red", "green","blue","orange","brown","orange",'yellow'];
-        
-        new Chart("myChart", {
-          type: "bar",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            legend: {display: false},
-            title: {
-              display: true,
-              text: "Doanh thu trong 7 ngày qua"
-            }
-          }
-        });
-        </script>
+   
     <script src="js/hieuung.js"></script>
     <script src="../src/js/admin.js"></script>
     
